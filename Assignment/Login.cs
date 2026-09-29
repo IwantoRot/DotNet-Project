@@ -64,5 +64,10 @@ namespace Assignment
                 lblKarteveTitle.Top = panelMain.Top - 65;
             }
         }
+
+        private void lblKarteveTitle_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

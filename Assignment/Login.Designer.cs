@@ -164,17 +164,17 @@
             lblSignIn.TabIndex = 0;
             lblSignIn.Text = "Sign In";
             lblSignIn.TextAlign = ContentAlignment.MiddleCenter;
-            //lblSignIn.Click += lblSignIn_Click;
             // 
             // lblKarteveTitle
             // 
             lblKarteveTitle.BackColor = Color.Transparent;
             lblKarteveTitle.Font = new Font("Segoe UI", 26F, FontStyle.Bold);
-            lblKarteveTitle.Location = new Point(0, 0);
+            lblKarteveTitle.Location = new Point(406, 48);
             lblKarteveTitle.Name = "lblKarteveTitle";
-            lblKarteveTitle.Size = new Size(400, 50);
+            lblKarteveTitle.Size = new Size(450, 50);
             lblKarteveTitle.TabIndex = 0;
             lblKarteveTitle.Text = "KARTEVE'S";
+            lblKarteveTitle.Click += lblKarteveTitle_Click;
             // 
             // Login
             // 

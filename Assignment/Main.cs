@@ -4,29 +4,29 @@ namespace Assignment
 {
     partial class SideBarWithContent : Form
     {
-        private IContainer components = null;
+        private IContainer components = null!;
 
         // Panels
-        private Panel leftSidebar;
-        private Panel headerPanel;
-        private Panel contentPanel;
+        private Panel leftSidebar = null!;
+        private Panel headerPanel = null!;
+        private Panel contentPanel = null!;
 
         // Branding
-        private PictureBox logoBox;
-        private Label titleLabel;
+        private PictureBox logoBox = null!;
+        private Label titleLabel = null!;
 
         // Nav buttons
-        private NavButton navDashboard;
-        private NavButton navRoom;
-        private NavButton navReservation;
-        private NavButton navMembership;
-        private NavButton navEmployees;
-        private NavButton navAccountDetails;
+        private NavButton navDashboard = null!;
+        private NavButton navRoom = null!;
+        private NavButton navReservation = null!;
+        private NavButton navMembership = null!;
+        private NavButton navEmployees = null!;
+        private NavButton navAccountDetails = null!;
 
         // Header items
-        private Label headerTitle;
-        private PictureBox userAvatar;
-        private PictureBox btnSettings;
+        private Label headerTitle = null!;
+        private PictureBox userAvatar = null!;
+        private PictureBox btnSettings = null!;
 
         protected override void Dispose(bool disposing)
         {
@@ -71,7 +71,7 @@ namespace Assignment
             {
                 Text = "KARTEVE'S",
                 ForeColor = Color.FromArgb(255, 130, 195),
-                Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point),
+                Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point),
                 Location = new Point(16, 52),
                 AutoSize = true
             };
@@ -108,7 +108,7 @@ namespace Assignment
 
             headerTitle = new Label()
             {
-                Text = "Overview",
+                Text = "KARTEVE'S Management System",
                 ForeColor = Color.White,
                 Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point),
                 Location = new Point(leftSidebar.Width + 24, 18),
@@ -161,23 +161,7 @@ namespace Assignment
                 Padding = new Padding(24)
             };
 
-            // Add placeholder content box
-            var contentBox = new Panel()
-            {
-                BackColor = Color.FromArgb(22, 22, 26),
-                Dock = DockStyle.Top,
-                Height = 360,
-                Padding = new Padding(16)
-            };
-            var overviewLabel = new Label()
-            {
-                Text = "Overview content goes here",
-                ForeColor = Color.FromArgb(200, 200, 210),
-                Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point),
-                Dock = DockStyle.Fill
-            };
-            contentBox.Controls.Add(overviewLabel);
-            contentPanel.Controls.Add(contentBox);
+            contentPanel.Controls.Add(new DashboardUC { Dock = DockStyle.Fill });
 
             // Add everything to form
             this.Controls.Add(contentPanel);
