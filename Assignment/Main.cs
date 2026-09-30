@@ -169,8 +169,16 @@ namespace Assignment
             this.Controls.Add(leftSidebar);
 
             // Basic events for demo
-            navDashboard.Click += (s, e) => SetActive(navDashboard);
-            navRoom.Click += (s, e) => SetActive(navRoom);
+            navDashboard.Click += (s, e) =>
+            {
+                SetActive(navDashboard);
+                ShowContent(new DashboardUC { Dock = DockStyle.Fill });
+            };
+            navRoom.Click += (s, e) =>
+            {
+                SetActive(navRoom);
+                ShowContent(new global::Assignment.UserControl.RoomUC { Dock = DockStyle.Fill });
+            };
             navReservation.Click += (s, e) => SetActive(navReservation);
             navMembership.Click += (s, e) => SetActive(navMembership);
             navEmployees.Click += (s, e) => SetActive(navEmployees);
@@ -267,6 +275,19 @@ namespace Assignment
                 if (c is NavButton nb)
                     nb.IsActive = nb == active;
             }
+        }
+
+        private void ShowContent(Control content)
+        {
+            while (contentPanel.Controls.Count > 0)
+            {
+                Control current = contentPanel.Controls[0];
+                contentPanel.Controls.RemoveAt(0);
+                current.Dispose();
+            }
+
+            content.Dock = DockStyle.Fill;
+            contentPanel.Controls.Add(content);
         }
     }
 }

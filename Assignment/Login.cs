@@ -18,7 +18,7 @@ namespace Assignment
             this.Resize += Login_LayoutControls;
         }
 
-        private void RemovePlaceholder(object sender, EventArgs e)
+        private void RemovePlaceholder(object? sender, EventArgs e)
         {
             TextBox txt = (TextBox)sender;
             if (txt.Text == "Staff email" || txt.Text == "Password")
@@ -30,7 +30,7 @@ namespace Assignment
             }
         }
 
-        private void SetPlaceholder(object sender, EventArgs e)
+        private void SetPlaceholder(object? sender, EventArgs e)
         {
             TextBox txt = (TextBox)sender;
             if (string.IsNullOrWhiteSpace(txt.Text))
@@ -46,12 +46,12 @@ namespace Assignment
             }
         }
 
-        private void Login_Load(object sender, EventArgs e)
+        private void Login_Load(object? sender, EventArgs e)
         {
 
         }
 
-        private void Login_LayoutControls(object sender, EventArgs e)
+        private void Login_LayoutControls(object? sender, EventArgs e)
         {
             panelMain.Left = (this.ClientSize.Width - panelMain.Width) / 2;
             panelMain.Top = (this.ClientSize.Height - panelMain.Height) / 2 + 30;
@@ -65,7 +65,7 @@ namespace Assignment
             }
         }
 
-        private void lblKarteveTitle_Click(object sender, EventArgs e)
+        private void lblKarteveTitle_Click(object? sender, EventArgs e)
         {
 
         }

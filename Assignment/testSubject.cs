@@ -16,7 +16,7 @@ namespace Assignment.Testing
             InitializeComponent();
         }
 
-        void changePanel(UserControl user)
+        void changePanel(global::System.Windows.Forms.UserControl user)
         {
             user.Dock = DockStyle.Fill;
             panel1.Controls.Clear();
